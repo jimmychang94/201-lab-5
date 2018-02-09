@@ -14,7 +14,7 @@ For TODO item, be sure to change it to say DONE when you have successfully compl
 function sum(a, b) { //eslint-disable-line
   var a2 = Number(a);
   var b2 = Number(b);
-  var theSum = a + b;
+  var theSum = a2 + b2;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
   return [theSum, message];
 }
@@ -36,7 +36,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   var a2 = Number(a);
   var b2 = Number(b);
-  var theProduct = a * b;
+  var theProduct = a2 * b2;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
   return [theProduct, message];
 }
@@ -85,11 +85,16 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(testArray) { //eslint-disable-line
-
+  var theSum = 0;
+  for(var i = 0; i < testArray.length; i ++) {
+    theSum = sum(theSum, testArray[i])[0];
+  }
+  var message = testArray + ' was passed in as an array of numbers, and ' + theSum + ' is their sum.';
+  return [theSum, message];
 }
 
 // TODO: Here is the test for sumArray(); uncomment it to run it
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
